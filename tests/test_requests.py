@@ -29,7 +29,12 @@ from smpclient.requests.file_management import (
     FileUpload,
     SupportedFileHashChecksumTypes,
 )
-from smpclient.requests.image_management import ImageStatesRead, ImageStatesWrite, ImageUploadWrite
+from smpclient.requests.image_management import (
+    ImageSlotInfoRead,
+    ImageStatesRead,
+    ImageStatesWrite,
+    ImageUploadWrite,
+)
 from smpclient.requests.os_management import (
     BootloaderInformationRead,
     DateTimeRead,
@@ -104,6 +109,13 @@ from smpclient.requests.zephyr_management import EraseStorage
             smpimg.ImageUploadWriteRequest(off=0, data=b"a"),
             ImageUploadWrite(off=0, data=b"a"),
             smpimg.ImageUploadWriteResponse,
+            smpimg.ImageManagementErrorV1,
+            smpimg.ImageManagementErrorV2,
+        ),
+        (
+            smpimg.ImageSlotInfoReadRequest(),
+            ImageSlotInfoRead(),
+            smpimg.ImageSlotInfoReadResponse,
             smpimg.ImageManagementErrorV1,
             smpimg.ImageManagementErrorV2,
         ),
