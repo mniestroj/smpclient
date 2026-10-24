@@ -75,6 +75,9 @@ doc = [
 "smp>=4.1.0",
 ]
 
+[tool.uv.sources]
+smp = { git = "https://github.com/JPHutchins/smp", rev = "3cf33bed8111f5041c66394fae8df7cf8839bdaf" }
+
 [tool.ruff]
 line-length = 100
 extend-exclude = ["dutfirmware", ".claude"]
